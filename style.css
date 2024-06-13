@@ -1,0 +1,122 @@
+* {
+  font-family: arial;
+}
+li {
+  list-style: none;
+}
+
+/* text color if the background is black */
+a {
+  color: white;
+  cursor: pointer;
+}
+
+#content {
+  background-color: black;
+  box-shadow: 0px 0px 5px 0px black;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+/* asdas */
+
+/* 10D */
+.recreate-9f {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 1080px;
+  height: 324px;
+  box-shadow: 0px 0px 6px -2px black;
+  display: flex;
+  flex-direction: row;
+}
+
+.image-card {
+  border-radius: 25px;
+  object-fit: cover;
+  width: 190px;
+  height: 200px;
+  margin: 0;
+  filter: none;
+  -webkit-filter: none;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.image-card:hover {
+  transition: filter 0.2s ease-in-out;
+  filter: brightness(60%);
+  -webkit-filter: brightness(60%);
+  -webkit-transition: filter 0.2s ease-in-out;
+  -moz-transition: filter 0.2s ease-in-out;
+  -ms-transition: filter 0.2s ease-in-out;
+  -o-transition: filter 0.2s ease-in-out;
+}
+
+.name-9f {
+    color: orange;
+  margin-top: 6px;
+    margin-bottom: 5px;
+  width: 165px;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+.name-9f:hover {
+  transition: 0.4s;
+  color: rgb(255, 205, 111);
+}
+
+.box {
+  width: 170px;
+  height: 104px;
+  margin: 10px;
+  margin-top: 2px;
+}
+
+.description-1 {
+  color: rgb(116, 116, 116);
+  text-decoration: none;
+  margin: 0;
+  width: 150px;
+  display: block;
+}
+
+.description-1:hover {
+  color: rgb(139, 139, 139);
+  text-decoration: underline;
+}
+
+.description-2 {
+  display: block;
+  width: 100px;
+  cursor: default;
+}
+
+.rating {
+    color: orange
+}
+
+.rating:hover {
+    color: rgb(255, 210, 126);
+}
