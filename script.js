@@ -15,7 +15,7 @@ const hitAPI = async (url) => {
     
 } 
 var stylesheetElem = document.querySelector('head link[rel="stylesheet"]');
-const loader = document.querySelector(".loading");
+var loader = document.querySelector(".loading");
 
 function showLoading() {
   loader.style.visibility = "visible"
