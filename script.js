@@ -2,7 +2,8 @@ let url = "https://reqres.in/api/users";
 const content = document.querySelector('#content')
 url = 'data.json'
 const hitAPI = async (url) => {
-    try {   
+    try {
+    showLoading()
     const api = await fetch(url)
     const data = await api.json()
     // console.log(data)
