@@ -2,12 +2,24 @@ let url = "https://reqres.in/api/users";
 const content = document.querySelector('#content')
 url = 'data.json'
 const hitAPI = async (url) => {
+    showLoading()
     const api = await fetch(url)
     const data = await api.json()
     // console.log(data)
     return data
-}
+    hideLoading()
+} 
 var stylesheetElem = document.querySelector('head link[rel="stylesheet"]');
+
+var loader = document.getElementById("loading")
+
+function showLoading(){
+    loader.style.visibility = "1";
+}
+
+function hideLoading(){
+    loader.style.visibility = "0";
+}
 
 url = "https://kitsu.io/api/edge/anime?filter[categories]=adventure&page[limit]=5"
 document.addEventListener('DOMContentLoaded', async () => {
