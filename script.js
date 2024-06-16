@@ -15,11 +15,7 @@ const hitAPI = async (url) => {
     
 } 
 var stylesheetElem = document.querySelector('head link[rel="stylesheet"]');
-<<<<<<< HEAD
 // var loader = document.querySelector(".loading");
-=======
-var loader = document.querySelector("loading");
->>>>>>> 755622bc6a108e20a01ae4426d8293f302c2e570
 
 document.addEventListener('DOMContentLoaded', () => {
 
