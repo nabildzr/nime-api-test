@@ -3,7 +3,6 @@ const content = document.querySelector('#content')
 url = 'data.json'
 const hitAPI = async (url) => {
     try {
-    showLoading()
     const api = await fetch(url)
     const data = await api.json()
     // console.log(data)
@@ -11,22 +10,59 @@ const hitAPI = async (url) => {
     } catch(error) {
         console.error("Failed to fetch data:", error)
     } finally {
-        hideLoading()
+        // hideLoading()
     }
     
 } 
 var stylesheetElem = document.querySelector('head link[rel="stylesheet"]');
-var loader = document.querySelector(".loading");
+// var loader = document.querySelector(".loading");
 
-function showLoading() {
-  loader.style.visibility = "visible"
-    stylesheetElem.disabled = true;
-}
+document.addEventListener('DOMContentLoaded', () => {
 
-function hideLoading() {
-    loader.style.visibility = "hidden"
-    stylesheetElem.disabled = false;
-}
+    function showLoading() {
+        const loadingIndicator = document.getElementById('loading-indicator'); 
+        if (loadingIndicator) { // Check if the element exists
+            loadingIndicator.style.display = 'block'; 
+        }
+    }
+
+    function hitAPI() {
+        showLoading(); // Show loading indicator immediately
+
+        fetch('https://api.example.com/data')
+            .then(response => response.json())
+            .then(data => {
+                // Process the API data
+                // ...
+
+
+                // Hide the loading indicator after data is loaded
+                const loadingIndicator = document.getElementById('loading-indicator');
+                if (loadingIndicator) {
+                    loadingIndicator.style.display = 'none';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    // Trigger the API call (e.g., when a button is clicked)
+    const button = document.getElementById('fetch-data-button');
+    if (button) {
+        button.addEventListener('click', hitAPI);
+    }
+});
+
+// function showLoading() {
+//   loader.style.visibility = "visible"
+//     stylesheetElem.disabled = true;
+// }
+
+// function hideLoading() {
+//     loader.style.visibility = "hidden"
+//     stylesheetElem.disabled = false;
+// }
 
 
 url = "https://kitsu.io/api/edge/anime?filter[categories]=adventure&page[limit]=5"
