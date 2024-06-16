@@ -20,24 +20,56 @@ var stylesheetElem = document.querySelector('head link[rel="stylesheet"]');
 document.addEventListener('DOMContentLoaded', () => {
 
     function showLoading() {
-        const loadingIndicator = document.getElementById('loading-indicator'); 
+        const loadingIndicator = document.getElementById('loadin'); 
         if (loadingIndicator) { // Check if the element exists
             loadingIndicator.style.display = 'block'; 
         }
     }
 
-    function hitAPI() {
+    async function hitAPI() {
         showLoading(); // Show loading indicator immediately
 
-        fetch('https://api.example.com/data')
+        fetch('https://kitsu.io/api/edge/anime?filter[categories]=adventure&page[limit]=5')
             .then(response => response.json())
             .then(data => {
                 // Process the API data
                 // ...
+data = data.data
+    console.log(data)
+    let teks = ''
+    data.forEach(element => {
+        let attr = element.attributes
+        teks += `
 
+
+               <div style="margin: 18px 13px 10px;">
+                    
+                    <a class="image-awal">
+                    
+                        <img class="image-card" src="${attr.posterImage.small}">
+                    </a>
+                    <div class="box">
+                        <a class="name-9f"> ${attr.titles.en}</a>
+                        <a class="description-1">Check Detail</a><br>
+    
+                        <a class="description-2">Rating: <span class="rating">${attr.averageRating}</span> </a>
+                    </div>
+                </div>
+   
+        `
+
+        //* <a class="friend-text">  ${attr.synopsis}</a>
+        //* <a> ${attr.ageRating}</a>
+        // teks += `<img src="${attr.posterImage.small}"></li>`
+        // teks += '</div>'
+
+        // console.log(element.name)
+    });
+
+    content.innerHTML = teks
 
                 // Hide the loading indicator after data is loaded
-                const loadingIndicator = document.getElementById('loading-indicator');
+                const loadingIndicator = document.getElementById('loadin');
                 if (loadingIndicator) {
                     loadingIndicator.style.display = 'none';
                 }
@@ -45,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+
+            let data = await hitAPI(url);
+    
+    
     }
 
     // Trigger the API call (e.g., when a button is clicked)
